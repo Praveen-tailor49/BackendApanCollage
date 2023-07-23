@@ -17,12 +17,12 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/faculty", facultyRoutes);
 app.use("/api/student", studentRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 9000 || 5000;
 app.get("/", (req, res) => {
   res.send("Hello to college erp API");
 });
 mongoose
-  .connect(process.env.CONNECTION_URL, {
+  .connect('mongodb+srv://praveenapnacollage:praveenapnacollage@cluster0.bzvkh7w.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
